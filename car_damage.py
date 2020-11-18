@@ -246,7 +246,7 @@ def Inference(weights_path, image_path):
         outimg = image.copy()
         # overlay[mask_dry==0] = (200, 80, 200)
         # overlay[mask_dry==0] = (10, 180, 200)
-        overlay[mask_dry>0] = (10, 180, 200)
+        overlay[mask_dry>0] = (255, 204, 0)
         
         # apply the overlay
         cv2.addWeighted(overlay, 0.5, img_yuv, 0.5, 0.8, outimg)
@@ -352,7 +352,7 @@ def Inference_Multi(weights_path, images_path, verbose=1, batch_size=1):
                 outimg = image.copy()
                 # overlay[mask_dry==0] = (200, 80, 200)
                 # overlay[mask_dry==0] = (10, 180, 200)
-                overlay[mask_dry>0] = (10, 180, 200)
+                overlay[mask_dry>0] = (255, 204, 0)
 
                 # apply the overlay
                 cv2.addWeighted(overlay, 0.5, img_yuv, 0.5, 0.8, outimg)
