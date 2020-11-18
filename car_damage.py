@@ -264,7 +264,7 @@ def Inference(weights_path, image_path):
         
         
         print("\nTotal image area: {0}x{1} pixels\n".format(mask.shape[0], mask.shape[1] ))
-        print("damage area: {0:.2f}% (blue)\n".format(damages))
+        print("damage area: {0:.2f}% (yellow)\n".format(damages))
         
     else:
         result = image.astype(np.uint8)
