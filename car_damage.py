@@ -19,7 +19,7 @@ ROOT_DIR = os.path.abspath("./")
 sys.path.append(ROOT_DIR)  # To find local version of the library
 from mrcnn.config import Config
 from mrcnn import model as modellib, utils
-from mrcnn.visualize import display_instances
+from mrcnn import visualize
 
 # Path to trained weights file
 COCO_WEIGHTS_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
@@ -213,7 +213,7 @@ def Inference(weights_path, image_path):
     # Detect objects
     r = model.detect([image], verbose=1)[0]
     class_names = ["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"]
-    display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'],captions=["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"])
+    visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'],captions=["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"])
     
     # Post Process
     """Apply color splash effect.
