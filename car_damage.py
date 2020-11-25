@@ -212,8 +212,8 @@ def Inference(weights_path, image_path):
     image = skimage.io.imread(image_path)
     # Detect objects
     r = model.detect([image], verbose=1)[0]
-    class_names = ["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"]
-    visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'],captions=["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"])
+    #class_names = ["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"]
+    #visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],class_names, r['scores'],captions=["car_damage","car_damage","car_damage","car_damage","car_damage","car_damage","car_damage"])
     
     # Post Process
     """Apply color splash effect.
